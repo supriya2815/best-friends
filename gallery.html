@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our First Trip 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:black;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Background */
+
+body::before{
+  content:'';
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url('https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=1920&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  filter:blur(5px);
+  z-index:-2;
+}
+
+body::after{
+  content:'';
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:-1;
+}
+
+/* Popup */
+
+.popup{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.popup button{
+  padding:20px 45px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(to right,#ff4fa3,#8d5bff);
+  color:white;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* Main */
+
+.container{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.container h1{
+  font-size:80px;
+  background:linear-gradient(to right,#ff4fa3,#8d5bff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.container p{
+  max-width:850px;
+  margin-top:20px;
+  font-size:22px;
+  line-height:2;
+  color:#f1f1f1;
+}
+
+/* Gallery */
+
+.gallery{
+  margin-top:60px;
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.gallery img{
+  width:420px;
+  height:auto;
+  object-fit:contain;
+  border-radius:25px;
+  transition:0.5s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* Videos */
+
+.video-box{
+  margin-top:60px;
+  display:flex;
+  flex-direction:column;
+  gap:35px;
+  align-items:center;
+}
+
+.video-box video{
+  width:750px;
+  max-width:90%;
+  border-radius:25px;
+}
+
+/* Button */
+.back-btn{
+  margin:50px auto;
+  display:block;
+  padding:18px 40px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(to right,#ff4fa3,#8d5bff);
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.container h1{
+  font-size:50px;
+}
+
+.gallery{
+  flex-direction:column;
+  align-items:center;
+}
+
+.gallery img{
+  width:90%;
+  height:auto;
+  object-fit:contain;
+}
+
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- Music Popup -->
+
+<div class="popup" id="popup">
+
+<button onclick="startMusic()">
+🎵 Play Music
+</button>
+
+</div>
+
+<!-- Song -->
+
+<audio id="song" loop>
+
+<source src="a6.mpeg" type="audio/mpeg">
+
+</audio>
+
+<!-- Content -->
+
+<div class="container">
+
+<h1>Best Moments!!!</h1>
+
+<p>
+Random day, unforgettable memories.
+</p>
+
+<!-- Photos -->
+
+<div class="gallery">
+
+
+<img src="g1.jpeg">
+
+<img src="g2.jpeg">
+
+<img src="g3.jpeg">
+
+
+
+<img src="g5.jpeg">
+
+<img src="g6.jpeg">
+<img src="g7.jpeg">
+<img src="g13.jpeg">
+
+
+
+<img src="g8.jpeg">
+<img src="g9.jpeg">
+<img src="g10.jpeg">
+<img src="g4.jpeg">
+<img src="g11.jpeg">
+<img src="g12.jpeg">
+
+<img src="g14.jpeg">
+<img src="g15.jpeg">
+<img src="g16.jpeg">
+<img src="g13.jpeg">
+<img src="g17.jpeg">
+<img src="g18.jpeg">
+<img src="g19.jpeg">
+<img src="g20.jpeg">
+<img src="g21.jpeg">
+<img src="g22.jpeg">
+<img src="g23.jpeg">
+<img src="g24.jpeg">
+<img src="g25.jpeg">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+<button class="back-btn" onclick="goBack()">
+Back
+</button>
+
+</div>
+
+<script>
+
+function startMusic(){
+
+  const song = document.getElementById("song");
+
+  song.play();
+
+  document.getElementById("popup").style.display = "none";
+
+}
+
+function goBack(){
+
+  window.history.back();
+
+}
+
+</script>
+
+</body>
+</html>
+

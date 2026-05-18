@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Memory Trip 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0f0f1a;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Stars */
+
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+.star{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+  animation:blink 3s infinite;
+}
+
+@keyframes blink{
+
+  0%,100%{
+    opacity:0.2;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+}
+
+/* Hero */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:90px;
+  background:linear-gradient(to right,#ff4fa3,#8d5bff,#53d8fb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  margin-top:20px;
+  max-width:800px;
+  font-size:22px;
+  line-height:1.8;
+  color:#d9d9d9;
+}
+
+/* Timeline */
+
+.timeline{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+  padding:100px 0;
+  position:relative;
+}
+
+/* Beautiful Center Line */
+
+.timeline::after{
+  content:'';
+  position:absolute;
+  width:8px;
+  background:linear-gradient(
+    to bottom,
+    #ff4fa3,
+    #ff84c1,
+    #8d5bff,
+    #53d8fb
+  );
+  top:0;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:20px;
+
+  box-shadow:
+    0 0 15px #ff4fa3,
+    0 0 30px #8d5bff,
+    0 0 50px #53d8fb;
+
+  animation:glowLine 3s infinite alternate;
+}
+
+@keyframes glowLine{
+
+  0%{
+    box-shadow:
+      0 0 10px #ff4fa3,
+      0 0 20px #8d5bff;
+  }
+
+  100%{
+    box-shadow:
+      0 0 25px #ff4fa3,
+      0 0 45px #8d5bff,
+      0 0 60px #53d8fb;
+  }
+
+}
+
+/* Memory Boxes */
+
+.memory-box{
+  width:50%;
+  padding:20px 40px;
+  position:relative;
+}
+
+.memory-box.left{
+  left:0;
+}
+
+.memory-box.right{
+  left:50%;
+}
+
+.memory-content{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  padding:25px;
+  border-radius:30px;
+  transition:0.5s;
+}
+
+.memory-content:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 30px rgba(255,255,255,0.2);
+}
+
+.memory-content img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+.memory-content h2{
+  margin-top:20px;
+  color:#ff8bd2;
+  font-size:32px;
+}
+
+.memory-content p{
+  margin-top:15px;
+  color:#ddd;
+  line-height:1.8;
+  font-size:18px;
+}
+
+/* Letter */
+
+.letter{
+  width:90%;
+  max-width:1000px;
+  margin:120px auto;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  padding:60px;
+  border-radius:40px;
+  text-align:center;
+}
+
+.letter h2{
+  font-size:55px;
+  margin-bottom:30px;
+  color:#ff8bd2;
+}
+
+.letter p{
+  font-size:22px;
+  line-height:2;
+  color:#eee;
+}
+
+/* Footer */
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#151526;
+  color:#aaa;
+  margin-top:80px;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.timeline::after{
+  left:20px;
+}
+
+.memory-box{
+  width:100%;
+  padding-left:60px;
+  padding-right:20px;
+}
+
+.memory-box.right{
+  left:0;
+}
+
+.hero h1{
+  font-size:55px;
+}
+
+.letter h2{
+  font-size:40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Stars -->
+
+<div class="stars" id="stars"></div>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<h1>Memory Trip 💖</h1>
+
+<p>
+A friendship journey full of fun, smiles, selfies, and unforgettable moments 💕📸
+</p>
+
+</section>
+
+<!-- Timeline -->
+
+<section class="timeline">
+
+<!-- First Trip -->
+
+<div class="memory-box left">
+
+<div class="memory-content" onclick="openTripPage1()" style="cursor:pointer;">
+
+<img src="h2.jpeg">
+
+<h2>Our First Trip </h2>
+
+<p>23 Dec 2022</p>
+
+<p>
+🥂✨ An unplanned trip and this crazy bestie — absolutely perfect combination 🌸💖
+</p>
+
+</div>
+
+</div>
+
+<!-- Crazy Day -->
+
+<div class="memory-box right">
+
+<div class="memory-content" onclick="openTripPage2()" style="cursor:pointer;">
+
+<img src="h3.jpg">
+
+<h2>Crazy Day 🌈</h2>
+
+<p>25 Dec 2022</p>
+
+<p>
+🤝💖 No one else is needed when my girlfriends are with me ✨👭
+</p>
+
+</div>
+
+</div>
+
+<!-- Second Trip -->
+
+<div class="memory-box left">
+
+<div class="memory-content" onclick="openTripPage()" style="cursor:pointer;">
+
+<img src="h1.webp">
+
+<h2>Our 2nd Trip </h2>
+
+<p>31 Dec 2023</p>
+
+<p>
+🌍✨ BEST FRIENDS 👭💖 , BEST TRIP ✈️🌈 , BEST TIME ⏳💫
+</p>
+
+</div>
+
+</div>
+
+<!-- Birthday -->
+
+<div class="memory-box right">
+
+<div class="memory-content" onclick="openTripPage3()" style="cursor:pointer;">
+
+<img src="s3.jpeg">
+
+<h2>🎂 Birthday Celebrations 📸</h2>
+
+<p>
+🎂 Beautiful faces, sweet memories, and my beloved besties 🫂💖📸✨
+</p>
+
+</div>
+
+</div>
+
+<!-- Memories -->
+
+<div class="memory-box left">
+
+<div class="memory-content" onclick="openGalleryPage()" style="cursor:pointer;">
+
+<img src="j4.jpeg">
+
+<h2>Beautiful Memories 💖</h2>
+
+<p>
+📸 Captured moments, forever memories 💖
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Letter -->
+
+<section class="letter">
+
+<h2>To My Favorite Girls 💌</h2>
+
+<p>Dear Besties💖✨ , <br><br>
+
+तुम्ही दोघी माझ्या आयुष्यात आहात ना, म्हणून प्रत्येक दिवस खास वाटतो. तुमच्यासोबतचे random plans, nonstop gossip, वेड्यासारखं हसणं आणि केलेली मजा — हे सगळं माझ्यासाठी खूप precious आहे.🌸
+
+Mood कितीही off असला तरी तुम्ही दोघी असलात की सगळं perfect वाटायला लागतं. Thank you नेहमी माझ्यासोबत राहिल्याबद्दल, मला समजून घेतल्याबद्दल आणि प्रत्येक situation मध्ये साथ दिल्याबद्दल. 💕
+
+आपली friendship अशीच कायम राहो — full of laughter, crazy memories, late-night talks आणि endless happiness. तुम्ही फक्त माझ्या best friends नाही, तर माझं comfort place आहात. 🌸
+
+                                                       <br>   Love you both forever 💫
+
+</p>
+
+<p>
+❤️ GAYATRI & SHITAL ❤️
+</p>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+Made With ❤️ For My Girls ✨
+</footer>
+
+<script>
+
+/* Stars */
+
+const stars = document.getElementById('stars');
+
+for(let i=0;i<150;i++){
+
+  let star = document.createElement('div');
+
+  star.classList.add('star');
+
+  star.style.left = Math.random()*100 + 'vw';
+
+  star.style.top = Math.random()*100 + 'vh';
+
+  stars.appendChild(star);
+
+}
+
+/* Pages */
+
+function openTripPage(){
+
+  window.location.href = "trip.html";
+
+}
+
+function openTripPage1(){
+
+  window.location.href = "trip1.html";
+
+}
+
+function openTripPage2(){
+
+  window.location.href = "j.html";
+
+}
+
+function openTripPage3(){
+
+  window.location.href = "t.html";
+
+}
+
+function openGalleryPage(){
+
+  window.location.href = "gallery.html";
+
+}
+
+</script>
+
+</body>
+</html>
